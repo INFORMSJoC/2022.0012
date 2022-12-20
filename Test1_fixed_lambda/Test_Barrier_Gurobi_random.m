@@ -61,7 +61,7 @@ for pp = 1:len_m
     end
 end
 
-% save Result_Gorubi_random.mat result
+save Result_Gorubi_random.mat result
 % profile viewer
 
 %%*********************************************************************
