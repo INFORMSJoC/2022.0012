@@ -67,6 +67,6 @@ for ii = 1:len_m
     end
 end
 
-%save result_MM_NPPA_random.mat result
+save result_MM_NPPA_random.mat result
 %profile viewer
 
