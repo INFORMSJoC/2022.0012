@@ -99,7 +99,7 @@ for ii = 1:lenprob
         end
     end
 end
-%save result_MM_NPPA_UCI.mat result
+save result_MM_NPPA_UCI.mat result
 %profile viewer
 
 
