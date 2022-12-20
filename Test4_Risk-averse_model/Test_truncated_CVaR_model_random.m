@@ -50,8 +50,8 @@ end
 Ave_Result = (1/repeat_times)*Result;
 Ave_Oracle =  (1/repeat_times)*Oracle;
 % 
-%save Ave_Result_nonconvex.mat Ave_Result
-%save Ave_Oracle_nonconvex.mat Ave_Oracle
+save Ave_Result_nonconvex.mat Ave_Result
+save Ave_Oracle_nonconvex.mat Ave_Oracle
 %profile viewer
 
 
