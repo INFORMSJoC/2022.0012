@@ -9,7 +9,7 @@ rng('default');
 prob = [1:11];
 %=======================
 
-diary 'Diary_Barrier_Gurobi_UCI.txt'
+%diary 'Diary_Barrier_Gurobi_UCI.txt'
 HOME = pwd;
 addpath(genpath(HOME));
 filepath = fileparts(HOME);
@@ -97,4 +97,4 @@ end
 
 save Result_Gorubi_UCI3.mat result
 %profile viewer
-diary off
+%diary off
