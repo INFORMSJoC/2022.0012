@@ -98,7 +98,7 @@ for ii = 1:lenprob
 end
  
 
-%save result_MM_Gurobi.mat result
+save result_MM_Gurobi.mat result
 
 %profile viewer
 
