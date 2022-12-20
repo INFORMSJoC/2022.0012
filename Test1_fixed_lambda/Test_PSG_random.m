@@ -90,7 +90,7 @@ for ii = 1:lenprob
     end
 end
 
-% save result_PSG_random.mat result
+save result_PSG_random.mat result
 % save result_PSG_status_random.mat result_status
 
 
