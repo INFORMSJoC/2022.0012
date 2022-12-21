@@ -1,5 +1,5 @@
 # mainfun
-This folder contains twelve main functions
+This folder contains twelve main functions, which are called directly by the scripts in the folders `Test1_fixed_lambda`, `Test2_Solution_path`, `Test3_truncated_CVaR_MM` and `Test4_Risk-averse_model` respectively.
 - `mainfun/NALM.m`: the main function of the solver ***N-ALM***.
 - `mainfun/SIRPN_CD.m`: the main function of the solver ***S-IRPN***.
 - `mainfun/ADMM_knorm.m`: the main function of the solver ***ADMM***.
