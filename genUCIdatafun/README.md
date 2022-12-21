@@ -1,5 +1,5 @@
 # genUCIdatafun
-This folder contains two scripts to generate the expanded UCI data sets.
+This folder contains a script and a function to generate the expanded UCI data sets.
 - `genUCIdatafun/genUCIdata.m`: main script for generating the expanded UCI data sets.
 - `genUCIdatafun/mypartition.m`: subfunction in *genUCIdata.m*.
 
