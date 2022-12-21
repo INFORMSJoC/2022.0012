@@ -68,7 +68,7 @@ errors according to Table 1 or three different contamination schemes according t
 - `mexfun`: two funtions in MEX format.
 - `solver`: all the subfunctions called by the above main functions.
 - `UCIdata`: all availiable data for the real data and the high-accurate objective values.
-- `Results`: all the numerical results and their corresponding running records of Tables 2-6 and Figures 1-2 in the paper.
+- `Results`: numerical results and their corresponding running records of Table 2 in the paper.
 
 ## Usage
 
