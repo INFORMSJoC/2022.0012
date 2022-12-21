@@ -1,5 +1,5 @@
 # UCIdata
-This folder contains the results obtained from **Gurobi** or **N-ALM** under the tolerance 1e-9, respectively. 
+This folder contains three benchmark results obtained from **Gurobi** or **N-ALM** under the tolerance 1e-9, respectively. 
 
 - `UCIdata/Result_Gorubi_UCI_1_11_1e-9.mat`: results used for the Tables 2-3 in the paper.
 - `UCIdata/Result_Gorubi_random_123456_1e-9.mat`: results used for the Tables 6-8 in the supplementary materials.
