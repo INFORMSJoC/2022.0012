@@ -10,5 +10,5 @@ This folder contains twelve main functions, which are called directly by the scr
 - `mainfun/dPPA_SSN.m`: the main function in the inner loop of the the solver ***MM+N-PPA***.
 - `mainfun/MM_Gurobi.m`: the main function of the solver ***MM+Gurobi***.
 - `mainfun/qp_Gurobi.m`: the main function in the inner loop of the the solver ***MM+Gurobi***.
-- `mainfun/Cross_validation_CVaR.m`: the main function called by the script *Test_convex_CVaR_model_random.m*.
-- `mainfun/Cross_validation_truncated_CVaR.m`: the main function called by the script *Test_truncated_CVaR_model_random.m*.
+- `mainfun/Cross_validation_CVaR.m`: the main function called by *Test_convex_CVaR_model_random.m*.
+- `mainfun/Cross_validation_truncated_CVaR.m`: the main function called by *Test_truncated_CVaR_model_random.m*.
