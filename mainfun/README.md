@@ -1,7 +1,14 @@
-# NP_classification
-This folder contains the folders and files to generate the results shown in Section 5.2 of the paper.
-- `NP_classification/test_NP_classification_logloss.m`: the main script.
-- `NP_classification/algorithms`: contains the codes of **CSA**, **YNW**, **PSG**, **APriD** and **SLPMM** which are adjusted for Neyman-Pearson classification.
-- `NP_classification/datasets`: contains three datasets.
-- `NP_classification/results`: contains the generated figures.
-- `NP_classification/tools`: contains the necessary support scripts.
+# mainfun
+This folder contains twelve main functions
+- `mainfun/NALM.m`:
+- `mainfun/SIRPN_CD.m`:
+- `mainfun/ADMM_knorm.m`:
+- `mainfun/PSG_solver.m`:
+- `mainfun/Gurobi_knorm_lp.m`:
+- `mainfun/AS_NALM_path.m`:
+- `mainfun/MM_NPPA.m`:
+- `mainfun/dPPA_SSN.m`:
+- `mainfun/MM_Gurobi.m`:
+- `mainfun/qp_Gurobi.m`:
+- `mainfun/Cross_validation_CVaR.m`:
+- `mainfun/Cross_validation_truncated_CVaR.m`:
