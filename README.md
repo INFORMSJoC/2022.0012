@@ -45,7 +45,7 @@ free academic licenses are available.
 - CVaR regression with a sequence of lambda: the convex CVaR-based sparse linear regression with a given sequence of grid points lambda.
   - **AS+N-ALM**: the adaptive sieving strategy combined with **N-ALM**
   - **Warm+N-ALM**: the warm-strated **N-ALM**
-  - **N-ALM**: the pure **N-ALM** 
+  - **Pure N-ALM**: the pure **N-ALM** 
 - Truncated CVaR regression: the nonconvex truncated CVaR-based sparse linear regression.
   - **MM+N-PPA**: the majorization-minimization algorithm combined with the semismooth Newton method based on the proximal point algorithm
   - **MM+Gurobi**: the majorization-minimization algorithm combined with the barrier method in Gurobi
