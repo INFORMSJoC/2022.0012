@@ -1,8 +1,6 @@
-# QCQP
-This folder contains the folders and files to generate the results shown in Section 5.3 of the paper.
-- `QCQP/test_QCQP.m`: the main script.
-- `QCQP/algorithms`: contains the codes of **YNW**, **PSG**, **APriD** and **SLPMM** which are adjusted for stochastic quadratically constrained quadratic programming.
-- `QCQP/results`: contains the generated figures.
-- `QCQP/tools`: contains the necessary support scripts.
-
-Note that `QCQP` does not contain a *data* folder, since  the tested numerical instances in this experiment are randomly generated in the main script by MATLAB functions. See a detailed description at Section 5.3 in the paper on how to randomly generate  the tested numerical instances.
+# Test3_truncated_CVaR_MM
+This folder contains four scripts to generate the results shown in Section 6.3 of the paper and Appendix F.4 of the supplementary materials.
+- `Test3_truncated_CVaR_MM/Test_MM_NPPA_UCI.m`: test the performance of **MM+N-PPA** on UCI data.
+- `Test3_truncated_CVaR_MM/Test_MM_NPPA_random.m`: test the performance of **MM+N-PPA** on random data.
+- `Test3_truncated_CVaR_MM/Test_MM_Gurobi_UCI.m`: test the performance of **MM+Gurobi** on UCI data.
+- `Test3_truncated_CVaR_MM/Test_MM_Gurobi_random.m`: test the performance of **MM+Gurobi** on random data.
