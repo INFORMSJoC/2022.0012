@@ -316,7 +316,7 @@ If you want to see the performance of **N-ALM**, **S-IRPN** and **ADMM** on UCI 
   ```
 	then run this script.
 	
-During the above tree operations, you will see the information for each iteration of **N-ALM**, **S-IRPN** and **ADMM** in the current command window (see Diary_NALM_UCI_flagtol_1_tol_1e-03.txt, Diary_SIRPN_UCI.txt and Diary_ADMM_UCI.txt in `\Results\Result_Table2` folder), respectively. Finally, you will obtain the files Result_NALM_UCI_flagtol_1_tol_1e-03.mat, Result_SIRPN_UCI.mat and Result_ADMM_UCI.mat in the current folder (see these three files in`\Results\Result_Table2` folder), which include all the information required in Table 2.
+During the above three operations, you will see the information for each iteration of **N-ALM**, **S-IRPN** and **ADMM** in the current command window (see Diary_NALM_UCI_flagtol_1_tol_1e-03.txt, Diary_SIRPN_UCI.txt and Diary_ADMM_UCI.txt in `\Results\Result_Table2` folder), respectively. Finally, you will obtain the files Result_NALM_UCI_flagtol_1_tol_1e-03.mat, Result_SIRPN_UCI.mat and Result_ADMM_UCI.mat in the current folder (see these three files in`\Results\Result_Table2` folder), which include all the information required in Table 2.
 
 ## Replicating
 - To replicate all the results on UCI data in the paper, modify and run the scripts in the corresponding folders `Test1_fixed_lambda`, `Test2_Solution_path` and `Test3_truncated_CVaR_MM` according to ***Step 4***, respectively. 
