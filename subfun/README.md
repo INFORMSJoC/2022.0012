@@ -1,5 +1,8 @@
 # subfun
-This folder contains 28 subfunctions of the corresponding main functions in `mainfun`.
+This folder contains 22 subfunctions of the corresponding main functions in `mainfun`, 5 functions for generating random data as well as another subfunction.
+
+### 22 subfunctions of the corresponding main functions in `mainfun`
+
 #### Subfunctions called by the main function *NALM.m* include: 
   - *CholHess.m*:  Cholesky factorization of Hessian
   - *Cumpute_matrix_C.m*: calculate a matrix $C$ as a part of Hessian
@@ -38,12 +41,14 @@ This folder contains 28 subfunctions of the corresponding main functions in `mai
   - *linsysolvefun.m*: solve a linear system
   - *Proj_dknorm.m*: compute the projection on the ball with center 0 and radius $r$ in the sense of the dual norm of k-norm
   - *Proj_inf.m*: compute the projection on the ball with center 0 and radius $r$ in the sense of $\ell_{\infty}$ norm
-#### functions for generating random data based on Table 1 or Table 3 in the supplementary materials
+  
+### 5 functions for generating random data based on Table 1 or Table 3 in the supplementary materials
   - *Generate_A_b_t.m*: generate the small-scale random data based on Table 1 
   - *Generate_A_b_t_large.m*: generate the large-scale random data based on Table 1 
   - *Generate_A_b_Configuration.m*: generate the small-scale random data based on Table 3
   - *Generate_A_b_Conf_large.m*: generate the large-scale random data based on Table 3 
   - *Generate_Toeplitz_matrix.m*: generate $n$-dimensional Toeplitz covariance matrix
-#### Other subfunction:
+  
+### Another subfunction:
   - *HKLeq.m*: subfunction of *Proj_dknorm.m*.
  
