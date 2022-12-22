@@ -4,7 +4,7 @@ This folder contains 28 subfunctions of the corresponding main functions in `mai
   - *CholHess.m*:  Cholesky factorization of Hessian
   - *Cumpute_matrix_C.m*: calculate a matrix C as a part of Hessian
   - *findstep*: find a step length by the line search
-  - *Generatedash_Jacobi*: obtain some information of generated Jacobian matrix
+  - *Generatedash_Jacobi*: obtain some information of the generalized Jacobian matrix
   - *invDvec.m*: calculate D^{-1}*rhs and T defined in Section 3.3 of the paper
   - *linsysolvefun.m*: solve a linear system
   - *matvec_N_ALM.m*: compute a Hessian times a vector
@@ -33,7 +33,7 @@ This folder contains 28 subfunctions of the corresponding main functions in `mai
   - *CholHess.m*:  Cholesky fractorization of Hessian 
   - *Cumpute_matrix_W_MM.m*: calculate an element W in the Clarke generalized Jacobian of the proximal mapping with respect to k-norm
   - *findstep_new_MM.m*: find a step length by the line search
-  - Generatedash_Jacobi_MM.m: obtain some information of generated Jacobian matrix
+  - Generatedash_Jacobi_MM.m: obtain some information of the generalized Jacobian matrix
   - *invDvec_MM.m*: calculate D^{-1}*rhs and T 
   - *linsysolvefun.m*: solve a linear system
   - *Proj_dknorm.m*: Compute the projection on the ball with center 0 and radius r in the sense of the dual norm of k-norm
