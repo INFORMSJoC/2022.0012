@@ -1,5 +1,5 @@
 # subfun
-This folder contains 31 subfunctions of the corresponding main functions in `mainfun`.
+This folder contains 28 subfunctions of the corresponding main functions in `mainfun`.
 #### Subfunctions called by the main function *NALM.m* include: 
   - *CholHess.m*:  Cholesky fractorization of Hessian
   - *Cumpute_matrix_C.m*: calculate a matrix C as a part of Hessian
