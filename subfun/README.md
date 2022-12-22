@@ -10,6 +10,7 @@ This folder contains 31 subfunctions of the corresponding main functions in `mai
   - *matvec_N_ALM.m*: compute a Hessian times a vector
   - *Proj_dknorm.m*: Compute the projection on the ball with center 0 and radius r in the sense of the dual norm of k-norm
   - *Proj_inf.m*: Compute the projection on the ball with center 0 and radius r in the sense of ell_{inf} norm
+  - *psqmr_knorm_N_ALM.m*: solve a Newton linear system by the preconditioned symmetric QMR
 ### Subfunctions called by the main function *SIRPN_CD.m* include: 
   - *CD.m*: coordinate descent algorithm for solving subproblems of ***S-IRPN***.
   - *phi_eps_fun.m*: calculate the function value, first-order derivative, second-oeder derivative of phi defined in Appendix E of the supplementary materials
@@ -22,25 +23,15 @@ This folder contains 31 subfunctions of the corresponding main functions in `mai
   - *Matvecnx.m*: compute a matrix times a vector when the sample size is greater that the feature size
   - *Proj_dknorm.m*: Compute the projection on the ball with center 0 and radius r in the sense of the dual norm of k-norm
   - *Proj_inf.m*: Compute the projection on the ball with center 0 and radius r in the sense of ell_{inf} norm
+  - *psqmr_ADMM_new.m*: solve a linear system of the ADMM subproblems by the preconditioned symmetric QMR
 
-
-### Subfunctions called by the main function *PSG_solver.m*include: 
-  - 
-  -
-  -
 ### Subfunctions called by the main function *Gurobi_knorm_lp.m* include: 
   - *linprog.m*: solve LP using the Gurobi MATLAB interface
-  -
-  -
 ### Subfunctions called by the main function *AS_NALM_path.m* include: 
   - *Proj_dknorm.m*: Compute the projection on the ball with center 0 and radius r in the sense of the dual norm of k-norm
   - *Proj_inf.m*: Compute the projection on the ball with center 0 and radius r in the sense of ell_{inf} norm
   -
-### Subfunctions called by the main function *MM_NPPA.m* include: 
-  - 
-  -
-  -
-### Subfunctions called by the main subfunction *dPPA_SSN.m* include: 
+### Subfunctions called by the main subfunction *dPPA_SSN.m* of *MM_NPPA.m* include: 
   - *CholHess.m*:  Cholesky fractorization of Hessian 
   - *Cumpute_matrix_W_MM.m*: calculate an element W in the Clarke generalized Jacobian of the proximal mapping with respect to k-norm
   - *findstep_new_MM.m*: find a step length by the line search
@@ -49,25 +40,6 @@ This folder contains 31 subfunctions of the corresponding main functions in `mai
   - *linsysolvefun.m*: solve a linear system
   - *Proj_dknorm.m*: Compute the projection on the ball with center 0 and radius r in the sense of the dual norm of k-norm
   - *Proj_inf.m*: Compute the projection on the ball with center 0 and radius r in the sense of ell_{inf} norm
-### Subfunctions called by the main function *MM_Gurobi.m* include: 
-  - 
-  -
-  -
-### Subfunctions called by the main subfunction *qp_Gurobi.m* include:
-  - 
-  -
-  -
-### Subfunctions called by the main function *Cross_validation_CVaR.m* include:  
-  - 
-  -
-  -
-### Subfunctions called by the main function *Cross_validation_truncated_CVaR.m* include:  
-  - 
-  -
-  -
-  
-  
-  
 ### functions for generating random data based on Table 1 or Table 3 in the supplementary materials
   - *Generate_A_b_t.m*: generate the small-scale random data based on Table 1 
   - *Generate_A_b_t_large.m*: generate the large-scale random data based on Table 1 
