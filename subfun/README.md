@@ -13,11 +13,11 @@ This folder contains 28 subfunctions of the corresponding main functions in `mai
   - *psqmr_knorm_N_ALM.m*: solve a Newton linear system by the preconditioned symmetric QMR
 #### Subfunctions called by the main function *SIRPN_CD.m* include: 
   - *CD.m*: coordinate descent algorithm for solving subproblems of ***S-IRPN***.
-  - *phi_eps_fun.m*: calculate the function value, first-order derivative, second-order derivative of $\phi$ defined in Appendix E of the supplementary materials
-  - *psi_eps_fun.m*: calculate the function value, first-order derivative, second-otder derivative of $\psi$ defined in Appendix E of the supplementary materials
+  - *phi_eps_fun.m*: calculate the function value, first-order derivative, second-order derivative of $\phi_{\epsilon}$ defined in Appendix E of the supplementary materials
+  - *psi_eps_fun.m*: calculate the function value, first-order derivative, second-order derivative of $\psi_{\epsilon}$ defined in Appendix E of the supplementary materials
   - *Proj_inf.m*: compute the projection on the ball with center 0 and radius $r$ in the sense of $\ell_{\infty}$ norm
 #### Subfunctions called by the main function *ADMM_knorm.m* include: 
-  - *CholHess.m*:  Cholesky fractorization of Hessian
+  - *CholHess.m*:  Cholesky factorization of Hessian
   - *linsysolvefun.m*: solve a linear system 
   - *Matvecmu.m*: compute a matrix times a vector when the sample size is not greater that the feature size
   - *Matvecnx.m*: compute a matrix times a vector when the sample size is greater that the feature size
