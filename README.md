@@ -66,7 +66,7 @@ errors according to Table 1 or three different contamination schemes according t
 - `genUCIdatafun`: convert the UCI data from LIBSVM format to MAT format.
 - `mainfun`: all main functions for the above solvers.
 - `mexfun`: two C source files and a script to build the MEX files.
-- `solver`: all the subfunctions called by the above main functions.
+- `subfun`: all the subfunctions called by the above main functions.
 - `UCIdata`: all available data for the real data and the high-accurate objective values.
 - `Results`: numerical results and their corresponding running records in Table 2 of the paper.
 
