@@ -5,20 +5,24 @@ This folder contains 31 subfunctions of the corresponding main functions in `mai
   - *Cumpute_matrix_C.m*: calculate a matrix C as a part of Hessian
   - *findstep*: find a step length by the line search
   - *Generatedash_Jacobi*: obtain some information of generated Jacobian matrix
+  - *invDvec.m*: calculate D^{-1}*rhs and T defined in Section 3.3 of the paper
+  - *linsysolvefun.m*: solve a linear system
+  - *matvec_N_ALM.m*: compute a Hessian times a vector
 ### Subfunctions called by the main function *SIRPN_CD.m* include: 
   - *CD.m*: coordinate descent algorithm for solving subproblems of ***S-IRPN***.
   -
   -
 ### Subfunctions called by the main function *ADMM_knorm.m* include: 
   - *CholHess.m*:  Cholesky fractorization of Hessian
-  -
-  -
+  - *linsysolvefun.m*: solve a linear system 
+  - *Matvecmu.m*: compute a matrix times a vector when the sample size is not greater that the feature size
+  - *Matvecnx.m*: compute a matrix times a vector when the sample size is greater that the feature size
 ### Subfunctions called by the main function *PSG_solver.m*include: 
   - 
   -
   -
 ### Subfunctions called by the main function *Gurobi_knorm_lp.m* include: 
-  - 
+  - *linprog.m*: solve LP using the Gurobi MATLAB interface
   -
   -
 ### Subfunctions called by the main function *AS_NALM_path.m* include: 
@@ -34,6 +38,8 @@ This folder contains 31 subfunctions of the corresponding main functions in `mai
   - *Cumpute_matrix_W_MM.m*: calculate an element W in the Clarke generalized Jacobian of the proximal mapping with respect to k-norm
   - *findstep_new_MM.m*: find a step length by the line search
   - Generatedash_Jacobi_MM.m: obtain some information of generated Jacobian matrix
+  - *invDvec_MM.m*: calculate D^{-1}*rhs and T 
+  - *linsysolvefun.m*: solve a linear system
 ### Subfunctions called by the main function *MM_Gurobi.m* include: 
   - 
   -
