@@ -1,7 +1,7 @@
 # subfun
 This folder contains 28 subfunctions of the corresponding main functions in `mainfun`.
 #### Subfunctions called by the main function *NALM.m* include: 
-  - *CholHess.m*:  Cholesky fractorization of Hessian
+  - *CholHess.m*:  Cholesky factorization of Hessian
   - *Cumpute_matrix_C.m*: calculate a matrix C as a part of Hessian
   - *findstep*: find a step length by the line search
   - *Generatedash_Jacobi*: obtain some information of generated Jacobian matrix
