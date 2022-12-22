@@ -4,7 +4,7 @@ This folder contains 31 subfunctions of the corresponding main functions in `mai
   - *CholHess.m*:  Cholesky fractorization of Hessian
   - *Cumpute_matrix_C.m*: calculate a matrix C as a part of Hessian
   - *findstep*: find a step length by the line search
-  - **
+  - *Generatedash_Jacobi*: obtain some information of generated Jacobian matrix
 ### Subfunctions called by the main function *SIRPN_CD.m* include: 
   - *CD.m*: coordinate descent algorithm for solving subproblems of ***S-IRPN***.
   -
@@ -33,6 +33,7 @@ This folder contains 31 subfunctions of the corresponding main functions in `mai
   - *CholHess.m*:  Cholesky fractorization of Hessian 
   - *Cumpute_matrix_W_MM.m*: calculate an element W in the Clarke generalized Jacobian of the proximal mapping with respect to k-norm
   - *findstep_new_MM.m*: find a step length by the line search
+  - Generatedash_Jacobi_MM.m: obtain some information of generated Jacobian matrix
 ### Subfunctions called by the main function *MM_Gurobi.m* include: 
   - 
   -
@@ -58,4 +59,6 @@ This folder contains 31 subfunctions of the corresponding main functions in `mai
   - *Generate_A_b_Configuration.m*: generate the small-scale random data based on Table 3
   - *Generate_A_b_Conf_large.m*: generate the large-scale random data based on Table 3 
   - *Generate_Toeplitz_matrix.m*: generate n*n-dimensional Toeplitz covariance matrix
+### Other subfunctions
+  - *HKLeq.m*: subfunction of *Proj_dknorm.m* and *Proj_dknorm_wt.m*.
  
