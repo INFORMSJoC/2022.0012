@@ -1,5 +1,5 @@
 function L = CholHess(Hess)
-%% Cholesky Fractorization of Hess, i.e., Hess = L*L'
+%% Cholesky Factorization of Hess, i.e., Hess = L*L'
 m = size(Hess,2);
 
 if (nnz(Hess)<0.2*m*m)
