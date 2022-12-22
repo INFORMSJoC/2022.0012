@@ -9,16 +9,19 @@ This folder contains 31 subfunctions of the corresponding main functions in `mai
   - *linsysolvefun.m*: solve a linear system
   - *matvec_N_ALM.m*: compute a Hessian times a vector
   - *Proj_dknorm.m*: Compute the projection on the ball with center 0 and radius r in the sense of the dual norm of k-norm
+  - *Proj_inf.m*: Compute the projection on the ball with center 0 and radius r in the sense of ell_{inf} norm
 ### Subfunctions called by the main function *SIRPN_CD.m* include: 
   - *CD.m*: coordinate descent algorithm for solving subproblems of ***S-IRPN***.
   - *phi_eps_fun.m*: calculate the function value, first-order derivative, second-oeder derivative of phi defined in Appendix E of the supplementary materials
   - *psi_eps_fun.m*: calculate the function value, first-order derivative, second-oeder derivative of psi defined in Appendix E of the supplementary materials
+  - *Proj_inf.m*: Compute the projection on the ball with center 0 and radius r in the sense of ell_{inf} norm
 ### Subfunctions called by the main function *ADMM_knorm.m* include: 
   - *CholHess.m*:  Cholesky fractorization of Hessian
   - *linsysolvefun.m*: solve a linear system 
   - *Matvecmu.m*: compute a matrix times a vector when the sample size is not greater that the feature size
   - *Matvecnx.m*: compute a matrix times a vector when the sample size is greater that the feature size
   - *Proj_dknorm.m*: Compute the projection on the ball with center 0 and radius r in the sense of the dual norm of k-norm
+  - *Proj_inf.m*: Compute the projection on the ball with center 0 and radius r in the sense of ell_{inf} norm
 
 
 ### Subfunctions called by the main function *PSG_solver.m*include: 
@@ -31,7 +34,7 @@ This folder contains 31 subfunctions of the corresponding main functions in `mai
   -
 ### Subfunctions called by the main function *AS_NALM_path.m* include: 
   - *Proj_dknorm.m*: Compute the projection on the ball with center 0 and radius r in the sense of the dual norm of k-norm
-  -
+  - *Proj_inf.m*: Compute the projection on the ball with center 0 and radius r in the sense of ell_{inf} norm
   -
 ### Subfunctions called by the main function *MM_NPPA.m* include: 
   - 
@@ -45,6 +48,7 @@ This folder contains 31 subfunctions of the corresponding main functions in `mai
   - *invDvec_MM.m*: calculate D^{-1}*rhs and T 
   - *linsysolvefun.m*: solve a linear system
   - *Proj_dknorm.m*: Compute the projection on the ball with center 0 and radius r in the sense of the dual norm of k-norm
+  - *Proj_inf.m*: Compute the projection on the ball with center 0 and radius r in the sense of ell_{inf} norm
 ### Subfunctions called by the main function *MM_Gurobi.m* include: 
   - 
   -
