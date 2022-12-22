@@ -1,5 +1,5 @@
 function [flag_case,r_tmp,options] = Generatedash_Jacobi(A,w1,w2,options)
-%% This function is to obtain the information of generated Jacobian matrix
+%% This function is to obtain the information of the generalized Jacobian matrix
 %% of projection on B_*={ z | \|z\|_inf <= r, \|z\|_1 <= kk*r }
 kk = options.kk;
 lambda = options.lambda;
