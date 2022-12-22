@@ -44,6 +44,6 @@ This folder contains 28 subfunctions of the corresponding main functions in `mai
   - *Generate_A_b_Configuration.m*: generate the small-scale random data based on Table 3
   - *Generate_A_b_Conf_large.m*: generate the large-scale random data based on Table 3 
   - *Generate_Toeplitz_matrix.m*: generate $n$-dimensional Toeplitz covariance matrix
-#### Other subfunctions
+#### Other subfunction:
   - *HKLeq.m*: subfunction of *Proj_dknorm.m*.
  
