@@ -1,15 +1,16 @@
 # subfun
 This folder contains 31 subfunctions of the corresponding main functions in `mainfun`.
 ### Subfunctions called by the main function *NALM.m* include: 
-  - asd
-  -
-  -
+  - *CholHess.m*:  Cholesky fractorization of Hessian
+  - *Cumpute_matrix_C.m*: calculate a matrix C as a part of Hessian
+  - *findstep*: find a step length by the line search
+  - **
 ### Subfunctions called by the main function *SIRPN_CD.m* include: 
-  - 
+  - *CD.m*: coordinate descent algorithm for solving subproblems of ***S-IRPN***.
   -
   -
 ### Subfunctions called by the main function *ADMM_knorm.m* include: 
-  - 
+  - *CholHess.m*:  Cholesky fractorization of Hessian
   -
   -
 ### Subfunctions called by the main function *PSG_solver.m*include: 
@@ -29,9 +30,9 @@ This folder contains 31 subfunctions of the corresponding main functions in `mai
   -
   -
 ### Subfunctions called by the main subfunction *dPPA_SSN.m* include: 
-  - 
-  -
-  -
+  - *CholHess.m*:  Cholesky fractorization of Hessian 
+  - *Cumpute_matrix_W_MM.m*: calculate an element W in the Clarke generalized Jacobian of the proximal mapping with respect to k-norm
+  - *findstep_new_MM.m*: find a step length by the line search
 ### Subfunctions called by the main function *MM_Gurobi.m* include: 
   - 
   -
@@ -48,4 +49,13 @@ This folder contains 31 subfunctions of the corresponding main functions in `mai
   - 
   -
   -
+  
+  
+  
+### functions for generating random data based on Table 1 or Table 3 in the supplementary materials
+  - *Generate_A_b_t.m*: generate the small-scale random data based on Table 1 
+  - *Generate_A_b_t_large.m*: generate the large-scale random data based on Table 1 
+  - *Generate_A_b_Configuration.m*: generate the small-scale random data based on Table 3
+  - *Generate_A_b_Conf_large.m*: generate the large-scale random data based on Table 3 
+  - *Generate_Toeplitz_matrix.m*: generate n*n-dimensional Toeplitz covariance matrix
  
