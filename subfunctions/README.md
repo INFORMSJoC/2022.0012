@@ -1,5 +1,7 @@
-# mainfun
-This folder contains twelve main functions and their main subfunctions.
+# subfunctions
+This folder contains 31 subfunctions called by the corresponding main functions in the folder `mainfun`
+
+twelve main functions and their main subfunctions.
 - `mainfun/NALM.m`: the main function of the solver ***N-ALM***.
 - `mainfun/SIRPN_CD.m`: the main function of the solver ***S-IRPN***.
 - `mainfun/ADMM_knorm.m`: the main function of the solver ***ADMM***.
