@@ -1,3 +1,11 @@
+%%=========================================================================
+%% Generate the Figure 1 in the supplementary materials
+%% Input:
+%% iter_0 = the number of starting test iteration of the N-ALM 
+%% iter_1 = the number of final test iteration of the N-ALM
+%% m = the sample size
+%% n = the feature size
+%%=========================================================================
 clc;clear
 %============= INPUT ==========
 iter_0 = 6;
