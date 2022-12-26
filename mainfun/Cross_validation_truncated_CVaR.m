@@ -1,7 +1,35 @@
+%%*************************************************************************
+%% Cross_validation_truncated_CVaR: five-fold cross validation 
+%% according to TMAPE(lambda) to select the parameter lambda of the 
+%% following truncated CVaR-based problems
 %%
-%% five-fold cross validation for solving the truncated CVaR-based problems on random data
+%% (P) minimize_{x in R^n} {||A*x - b||_(k1) - ||A*x - b||_(k2) 
+%%                          + lambda ||x||_1}
 %%
-function solution_vec = Cross_validation_truncated_CVaR(A,b,A_valid,b_valid,lambdavec,num_kk2,iii,flag_cm)
+%% solution_vec = Cross_validation_truncated_CVaR(A,b,A_valid,...
+%%                  b_valid,lambdavec,num_kk2,iii,flag_cm)
+%% 
+%% Input: 
+%% A, b = matrix A and vector b in (P)
+%% A_valid, b_valid = an additional validation set
+%% lambdavec = the vector of the values of parameter lambda in (P)
+%% num_kk2 = the value safistying kk2 = ceil(num_kk2*m_train) with 
+%%          the training sample size m_trian
+%% iii = the number of repeat times
+%% flag_cm = 1, no contamination in sampling instance
+%%           2, vertical outliers in sampling instance
+%%           3, leverage points in sampling instance
+%% Output:
+%% solution_vec = Result corresponding to the minimal value of 
+%%                TMAPE(lambda) defined in Appendix F.1 of the 
+%%                supplementary materials
+%% Copyright (c) 2022 by Can Wu, Ying Cui, Donghui Li, Defeng Sun
+%% For more details, please see the Appendix F.1 of the 
+%% supplementary materials in the paper: 
+%% Convex and Nonconvex Risk-based Linear Regression at Scale.
+%%*************************************************************************
+function solution_vec = Cross_validation_truncated_CVaR(A,b,A_valid,b_valid,...
+    lambdavec,num_kk2,iii,flag_cm)
 m_valid = length(b_valid);
 num_df = 5;
 

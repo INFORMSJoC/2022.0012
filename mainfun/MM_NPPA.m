@@ -1,25 +1,31 @@
-%%**************************************************************************************************
+%%*************************************************************************
 %% MM_NPPA:
 %% A majorization-minimization algorithm associated the semismooth 
 %% Newton method based on the proximal point algorithm for solving 
 %% the nonconvex truncated CVaR-based sparse linear regression:
 %%
-%% minimize_{x in R^n} {||A*x - b||_(k1) - ||A*x - b||_(k2) + lambda ||x||_1}
+%% (P) minimize_{x in R^n} {||A*x - b||_(k1) - ||A*x - b||_(k2) 
+%%                          + lambda ||x||_1}
 %% 
 %% where A in R^{m * n}, b in R^m and lambda in R_+ are given,
 %% and n >= k1 > k2 > 0.
 %%
 %% [x,obj,info,runhist] = MM_NPPA(A,b,kk1,kk2,lambda,OPTIONS)
+%% 
 %% Input:
 %% A, b, kk1(k1), kk2(k2), lambda
-%% OPTIONS.Warm_starting = 1, warm starting with the N-ALM for a good initial point;
-%%                         0, without any warm starting and origin as the initial point;
+%% OPTIONS.Warm_starting = 1, warm starting with the N-ALM for a 
+%%                            good initial point;
+%%                         0, without any warm starting and origin 
+%%                            as the initial point;
 %% OPTIONS.tol = accuracy tolerance for solving the problem;
 %% OPTIONS.tol_alm = accuracy tolerance for the warm-starting N-ALM;
-%% OPTIONS.maxiterMM = maximum number of outer iteration of the MM_NPPA;
+%% OPTIONS.maxiterMM = maximum number of outer iteration of the 
+%%                     MM_NPPA;
 %% OPTIONS.maxtime = maximum time for the MM_NPPA;
 %% OPTIONS.rho0 = initial value of the parameter rho in the MM;
-%% OPTIONS.sigma0 = initial value of the parameter sigma (c in manuscript) in the MM;
+%% OPTIONS.sigma0 = initial value of the parameter sigma 
+%%                  (c in manuscript) in the MM;
 %% OPTIONS.eta0 = initial value of the parameter eta in the PPA;
 %% OPTIONS.rhoscale = coefficient in (0,1) for updating rho;
 %% OPTIONS.sigmascale = coefficient in (0,1) for updating sigma;
@@ -27,19 +33,20 @@
 %% OPTIONS.UCI = 1, using the UCI data; 0, using the random data;
 %% OPTIONS.rho_iter = frequency for updating rho and sigma;
 %% Output:
-%% x = the variable;
-%% obj = objective value;
+%% x = the output solution x of (P);
+%% obj = the output objective value of (P);
 %% info.iter = total number of outer MM iteration;
 %% info.iterPPA = total number of inner PPA iteration;
 %% info.iterSSN = total number of inner SSN iteration;
 %% info.obj_gap = relative residual for two adjacent objectives;
-%% info.time = total time;
+%% info.time = total running time;
 %% info.nnzeros_x = the number of nonzero entries for x;
 %% runhist = a structure containing the history of the run;
 %% MM_NPPA:
-%% Copyright (c) 2022 by
-%% Can Wu, Ying Cui, Donghui Li, Defeng Sun
-%%**************************************************************************************************
+%% Copyright (c) 2022 by Can Wu, Ying Cui, Donghui Li, Defeng Sun
+%% For more details, please see the Section 5 in the paper: 
+%% Convex and Nonconvex Risk-based Linear Regression at Scale.
+%%*************************************************************************
 
 function [x,obj,info,runhist] = MM_NPPA(A,b,kk1,kk2,lambda,OPTIONS)
 

@@ -1,16 +1,41 @@
-%%*******************************************************************************
+%%*************************************************************************
 %% qp_Gurobi:
 %% Run the barrier method in Gurobi for solving the nonconvex 
 %% truncated CVaR-based sparse linear regression under QP form:
 %% minimize    k*c + sum(u) + lambda*sum(v) - < AT*a, x - x_old> 
 %% {x,v,u,c}   + (rho/2)||x - x_old||^2 + (sigma/2)||A*x - A*x_old||^2
 %% subject to             A*x - u - c*e <= b
-%%                        A*x + u + c*e >= b
+%% (P)                    A*x + u + c*e >= b
 %%                                x + v >= 0
 %%                                x - v <= 0
 %%                                    u >= 0
 %% where x, v in R^n, u in R^m, c in R are varibles and e:=ones(m,1)
-%%*******************************************************************************
+%%
+%% [x, fval, exitflag, output] = qp_Gurobi(A,b,options)
+%%
+%% Input:
+%% A, b = the m*n-dimensional design matrix A and the m-dimensional 
+%%        response vector b in (P)
+%% options.m = sample size
+%% options.n = feature size
+%% options.kk1 = the value of parameter k in (P)
+%% options.lambda = the value of parameter lambda in (P)
+%% options.sigma = the value of parameter sigma in (P)
+%% options.a = the m-dimensional vector a in (P)
+%% options.ATA = the n*n-dimensional matrix AT*A
+%% options.x0 = the n-dimensional vector x_old in (P)
+%% Output:
+%% x = the output solution of (P)
+%% fval = the output objective value of (P)
+%% exitflag = -3, problem is unbounded
+%%          = -2, no feasible point found
+%%          = 0, maximum number of iterations reached
+%%          = 1, converged to a solution
+%% output.message = message from Gurobi
+%% output.time = total running time 
+%% output.iterBar = the number of iterations of the barrier method
+%% output.nnzeros_x = the number of nonzero elements of x
+%%*************************************************************************
 function [x, fval, exitflag, output] = qp_Gurobi(A,b,options)
 
 m = options.m;

@@ -1,4 +1,4 @@
-%%*****************************************************************************************************
+%%*************************************************************************
 %% ADMM_knorm:
 %% an alternating direction method of multipliers (ADMM) for solving
 %% the following problem
@@ -6,13 +6,17 @@
 %%           s.t.      A^T*u + v = 0,
 %%                     w - u = 0, v in B^lam_inf, w in B^1_(k)^*,
 %%  where v in R^n, u,w in R^m,
-%%  B^lam_inf is a ball with center 0 and radius lambda in the sense of ell_inf norm,
-%%  B^1_(k)^* is a ball with center 0 and radius 1 in the sense of the duall norm of k-norm.
+%%  B^lam_inf is a ball with center 0 and radius lambda in the sense 
+%%  of ell_inf norm, B^1_(k)^* is a ball with center 0 and radius 1 
+%%  in the sense of the duall norm of k-norm.
 %% Its dual problem is
 %%     min_{x,z}     ||z||_{(k)} + lambda*||x||_1                (P)
 %%          s.t.      Ax - z = b,
-%% where x in R^n, z in R^m, H is a given positive scalar multiple of the identity matrix.
+%% where x in R^n, z in R^m, H is a given positive scalar multiple 
+%% of the identity matrix.
+%%
 %% [obj,x,u,runhist,info] = ADMM_knorm(Ainput,b,options)
+%%
 %% Input:
 %% Ainput, b;
 %% options.m = the sample size;
@@ -32,20 +36,23 @@
 %%                     3: solve linear equation by semi-proximal dADMM.
 %% Output:
 %% obj = [Primal objective value, Dual objective value];
-%% x = the primal variable;
-%% u = the dual variable;
+%% x = the output primal solution x;
+%% u = the output dual solution u;
 %% runhist = a structure containing the history of the run;
 %% info.iter = the total number of iterations;
-%% info.time = total time;
+%% info.time = total running time;
 %% info.time_cpu = total CPU time;
 %% info.res_kkt = relative KKT residual;
-%% info.eta_res = relative residual based on infeasibilities and duality gap.
+%% info.eta_res = relative residual based on infeasibilities 
+%%                and duality gap.
 %% info.relgap = relative duality gap;
 %% info.xnnz = the number of nonzero entries for x
 %% N-ALM:
-%% Copyright (c) 2022 by
-%% Can Wu, Ying Cui, Donghui Li, Defeng Sun
-%%*****************************************************************************************************
+%% Copyright (c) 2022 by Can Wu, Ying Cui, Donghui Li, Defeng Sun
+%% For more details, please see the Appendix D in the supplementary
+%% materials of the paper: 
+%% Convex and Nonconvex Risk-based Linear Regression at Scale.
+%%*************************************************************************
 function [obj,x,u,runhist,info] = ADMM_knorm(Ainput,b,options)
 %%
 %% parameter setting

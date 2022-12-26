@@ -1,38 +1,44 @@
-%%********************************************************************************************************
+%%*************************************************************************
 %% SIRPN_CD:
-%% A smoothing method based on the inexact regularized proximal Newton
-%% method whose subproblems are solved by the coordinate descent algorithm
-%% for solving the convex CVaR-based sparse linear regression:
+%% A smoothing method based on the inexact regularized proximal 
+%% Newton method whose subproblems are solved by the coordinate 
+%% descent algorithm for solving the convex CVaR-based sparse
+%% linear regression:
 %% 
-%%  minimize_{x in R^n, t in R} sum^n_{i=1}max(|b_i-A_i*x|-lambda*t,0) + lambda*k||(x,t)||_1
+%%  minimize_{x in R^n, t in R} sum^n_{i=1}max(|b_i-A_i*x|-lambda*t,0) 
+%%                              + lambda*k||(x,t)||_1
 %%
-%% where A is an n*d design matrix whose each row is A_i, b is the response vector in R^n,
-%% lambda is the given positive parameter, k is the given positive integer between 1 and n.
+%% where A is an n*d design matrix whose each row is A_i, b is the 
+%% response vector in R^n,lambda is the given positive parameter, 
+%% k is the given positive integer between 1 and n.
+%%
 %% [obj,x,t,runhist,info] = SIRPN_CD(Ainput,b,OPTIONS)
+%%
 %% Input: 
-%% Ainput, b
-%% OPTIONS.epsilon = parameter in CHKS smoothing function;
-%% OPTIONS.tol = the accuracy tolerance for solving the problem;
-%% OPTIONS.tolsub = the accuracy tolerance for solving subproblems by IRPN
-%% OPTIONS.obj_opt = the optimal value of the problem;
-%% OPTIONS.maxiter = the maximum number of outer iteration;
-%% OPTIONS.maxitersub = the maximum number of inner iteration;
-%% OPTIONS.maxtime = the maximum time of the S-IRPN;
-%% OPTIONS.mu = the parameter in Hessian for the subproblems of IRPN;
+%% Ainput, b = the design matrix A and the response vector b
+%% OPTIONS.epsilon = parameter in CHKS smoothing function
+%% OPTIONS.tol = the accuracy tolerance for solving the problem
+%% OPTIONS.tolsub = the accuracy tolerance for solving subproblems 
+%%                  by IRPN
+%% OPTIONS.obj_opt = the optimal value of the problem
+%% OPTIONS.maxiter = the maximum number of outer iteration
+%% OPTIONS.maxitersub = the maximum number of inner iteration
+%% OPTIONS.maxtime = the maximum time of the S-IRPN
+%% OPTIONS.mu = the parameter in Hessian for the subproblems of IRPN
 %% Output:
-%% obj = objective value of the problem;
-%% (x,t) = the variable of the problem;
-%% runhist = a structure containing the history of the run;
-%% info.iter = the total number of outer iteration;
-%% info.itersub = the total number of inner iteration;
-%% info.relobj = relative residual between obj and obj_opt;
-%% info.time =  total time;
-%% info.xnnz = the number of nonzeros in x;
-%% SIRPN_CD:
-%% Copyright (c) 2022 by
-%% Can Wu, Ying Cui, Donghui Li, Defeng Sun
-%%******************************************************************************************************
-
+%% obj = the output objective value of the problem
+%% (x,t) = the output solution of the problem
+%% runhist = a structure containing the history of the run
+%% info.iter = the total number of outer iteration
+%% info.itersub = the total number of inner iteration
+%% info.relobj = relative residual between obj and obj_opt
+%% info.time =  total running time
+%% info.xnnz = the number of nonzeros in x
+%% Copyright (c) 2022 by Can Wu, Ying Cui, Donghui Li, Defeng Sun
+%% For more details, please see the Appendix E in the supplementary
+%% materials of the paper: 
+%% Convex and Nonconvex Risk-based Linear Regression at Scale.
+%%*************************************************************************
 function [obj,x,t,runhist,info] = SIRPN_CD(Ainput,b,OPTIONS)
 
 %%

@@ -1,6 +1,7 @@
-%%***************************************************************************************************************
-%% AS_NALM_path: an adaptive sieving strategy associated N-ALM for computing 
-%% a solution path of the convex CVaR-based sparse linear regression:
+%%*************************************************************************
+%% AS_NALM_path: an adaptive sieving strategy associated N-ALM for 
+%% computing a solution path of the convex CVaR-based sparse linear 
+%% regression:
 %%
 %% (P)  minimize_{x in R^n} {||Ax - b||_(k) + lambda ||x||_1} 
 %% where A in R^{m * n}, b in R^m and lambda > 0 are given.
@@ -10,32 +11,44 @@
 %% Ainput,b;
 %% OPTIONS.tol = accuracy tolerance for solving the problem;
 %% OPTIONS.maxitersub = maximum number of inner iteration;
-%% OPTIONS.lambda = a sequence of parameters lambda in (P) with length lenlam;
+%% OPTIONS.lambda = a sequence of parameters lambda in (P) with 
+%%                  length lenlam;
 %% OPTIONS.kk = parameter k in (P);
 %% OPTIONS.sigma = a sequence of the initial values for sigma in N-ALM;
 %% OPTIONS.tau = a sequence of the initial values for tau in N-ALM;
 %% OPTIONS.sigmascale = the positive number for updating sigma in N-ALM;
 %% OPTIONS.tauscale = the positive number for updating tau in N-ALM;
 %% Output:
-%% Obj = a lenlam*2 matrix whose i-th row is the primal and dual objectives associated to lambda(i);
-%% X = an n*lenlam matrix whose j-th column is the primal variable associated to lambda(j);
-%% U = a m*lenlam matrix whose j-th column is the dual variable associated to lambda(j);
+%% Obj = a lenlam*2 matrix whose i-th row is the output primal and 
+%%       dual objectives associated to lambda(i);
+%% X = an n*lenlam matrix whose j-th column is the output primal 
+%%     solution x associated to lambda(j);
+%% U = a m*lenlam matrix whose j-th column is the output dual 
+%%     solution u associated to lambda(j);
 %% runhistAS.relkkt = a sequence of relative KKT residuals;
 %% runhistAS.relgap = a sequence of relative duality gaps;
 %% runhistAS.primfeas = a sequence of primal infeasibilities;
 %% runhistAS.dualfeas = a sequence of dual infeasibilities;
-%% runhistAS.iterAS = a sequence of the number of inner iterations for each outer AS iteration;
-%% runhistAS.iterPAL = a sequence of the number of ALM iterations in N-ALM for each outer AS iteration;
-%% runhistAS.iterSSN = a sequence of the number of SSN iterations in N-ALM for each outer AS iteration;
-%% runhistAS.time = a sequence of the time for each outer AS iteration;
+%% runhistAS.iterAS = a sequence of the number of inner iterations 
+%%                    for each outer AS iteration;
+%% runhistAS.iterPAL = a sequence of the number of ALM iterations in 
+%%                     N-ALM for each outer AS iteration;
+%% runhistAS.iterSSN = a sequence of the number of SSN iterations in 
+%%                     N-ALM for each outer AS iteration;
+%% runhistAS.time = a sequence of the running time for each outer AS
+%%                  iteration;
 %% runhistAS.ttime_path = a sequence of the cumulative time;
-%% runhistAS.xnnz_path = a sequence of the true cardinality of the solution
-%% runhistAS.n_mean = a sequence of the average number of selected active features;
-%% infoAS = a structure containing the history of the last AS iteration; 
+%% runhistAS.xnnz_path = a sequence of the true cardinality of the 
+%%                       solution
+%% runhistAS.n_mean = a sequence of the average number of selected 
+%%                    active features;
+%% infoAS = a structure containing the history of the last AS 
+%%          iteration; 
 %% N-ALM:
-%% Copyright (c) 2022 by
-%% Can Wu, Ying Cui, Donghui Li, Defeng Sun
-%%***************************************************************************************************************
+%% Copyright (c) 2022 by Can Wu, Ying Cui, Donghui Li, Defeng Sun
+%% For more details, please see the Section 4 in the paper: 
+%% Convex and Nonconvex Risk-based Linear Regression at Scale.
+%%*************************************************************************
 function [Obj,X,U,runhistAS,infoAS] = AS_NALM_path(Ainput,b,OPTIONS)
 %%
 %% Parameter setting

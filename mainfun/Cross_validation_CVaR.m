@@ -1,6 +1,28 @@
+%%*************************************************************************
+%% Cross_validation_CVaR: five-fold cross validation according to 
+%% TMAPE(lambda) to select the parameter lambda of the following 
+%% convex CVaR-based sparse linear regression model
+%%
+%% (P)   minimize_{x in R^n} {||A*x - b||_(k) + lambda ||x||_1}
+%%
+%% solution_vec = Cross_validation_CVaR(A,b,A_valid,b_valid,lambdavec,kk1,iii)
+%%
+%% Input: 
+%% A, b = matrix A and vector b in (P)
+%% A_valid, b_valid = an additional validation set
+%% lambdavec = the vector of the values of parameter lambda in (P)
+%% kk1 = the value of parameter k in (P)
+%% iii = the number of repeat times
+%% Output:
+%% solution_vec = result corresponding to the minimal value of 
+%%                TMAPE(lambda) defined in Appendix F.1 of the 
+%%                supplementary materials
+%% Copyright (c) 2022 by Can Wu, Ying Cui, Donghui Li, Defeng Sun
+%% For more details, please see the Appendix F.1 of the 
+%% supplementary materials in the paper: 
+%% Convex and Nonconvex Risk-based Linear Regression at Scale.
+%%*************************************************************************
 function solution_vec = Cross_validation_CVaR(A,b,A_valid,b_valid,lambdavec,kk1,iii)
-%% This function is to select the parameter lambda by the five-fold cross
-%% validation according to TMAPE(lambda)
 m_valid = length(b_valid);
 num_df = 5;
 lenlam = length(lambdavec);

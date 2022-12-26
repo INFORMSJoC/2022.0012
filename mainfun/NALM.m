@@ -1,7 +1,7 @@
 %%*************************************************************************
 %% NALM:
-%% A semismooth-Newton based proximal augmented Lagrangian method for solving
-%% the convex CVaR-based sparse linear regression:
+%% a semismooth-Newton based proximal augmented Lagrangian method 
+%% for solving the convex CVaR-based sparse linear regression:
 %%
 %% (P)   minimize_{x in R^n} {||A*x - b||_(k) + lambda ||x||_1}
 %%
@@ -11,40 +11,41 @@
 %% where A in R^{m * n}, b in R^m and lambda > 0 are given.
 %%
 %% [obj,x,u,z,runhist,info] = N_ALM(Ainput,b,OPTIONS)
+%% 
 %% Input:
-%% Ainput,b;
-%% OPTIONS.tol = the accuracy tolerance for solving the problem;
-%% OPTIONS.maxiter = the maximum number of outer iteration;
-%% OPTIONS.maxitersub = the maximum number of inner iteration;
-%% OPTIONS.maxtime = the maximum time of the N-ALM;
-%% OPTIONS.lambda = the value of parameter lambda in (P);
-%% OPTIONS.kk = the value of parameter k in (P);
-%% OPTIONS.sigma = the initial value of sigma in the proximal ALM;
-%% OPTIONS.tau = the initial value of tau in the proximal ALM;
-%% OPTIONS.sigmascale = the positive number for updating sigma;
+%% Ainput,b = the design matrix A and the response vector b
+%% OPTIONS.tol = the accuracy tolerance for solving the problem
+%% OPTIONS.maxiter = the maximum number of outer iteration
+%% OPTIONS.maxitersub = the maximum number of inner iteration
+%% OPTIONS.maxtime = the maximum time of the N-ALM
+%% OPTIONS.lambda = the value of parameter lambda in (P)
+%% OPTIONS.kk = the value of parameter k in (P)
+%% OPTIONS.sigma = the initial value of sigma in the proximal ALM
+%% OPTIONS.tau = the initial value of tau in the proximal ALM
+%% OPTIONS.sigmascale = the positive number for updating sigma
 %% OPTIONS.tauscale = the positive number for updating tau;
-%% OPTIONS.flag_tol = 0, adopt eta_res < tol as the stopping criterion of the N-ALM.
-%%                  = 1, adopt  relobj < tol as the stopping criterion of the N-ALM;
-%%                  = 2, adopt  relkkt < tol as the stopping criterion of the N-ALM.
+%% OPTIONS.flag_tol = 0, adopt eta_res < tol as the stopping criterion of the N-ALM
+%%                  = 1, adopt  relobj < tol as the stopping criterion of the N-ALM
+%%                  = 2, adopt  relkkt < tol as the stopping criterion of the N-ALM
 %% Output:
-%% obj = [Primal objective value, Dual objective value];
-%% x = the primal variable;
-%% z = the primal slack variable;
-%% u = the dual variable;
-%% runhist = a structure containing the history of the run;
-%% info.iter = the total number of outer iterations;
-%% info.numSSN = the total number of inner iterations;
-%% info.priminfeas_final = primal infeasibility;
-%% info.dualinfeas_final = dual infeasibility;
-%% info.res_kkt_final = relative KKT residual;
-%% info.eta_res = relative residual based on infeasibilities and duality gap.
-%% info.totletime = total time;
+%% obj = [Primal objective value, Dual objective value]
+%% x = the output primal solution x
+%% z = the output primal slack solution z
+%% u = the output dual solution u
+%% runhist = a structure containing the history of the run
+%% info.iter = the total number of outer iterations
+%% info.numSSN = the total number of inner iterations
+%% info.priminfeas_final = primal infeasibility
+%% info.dualinfeas_final = dual infeasibility
+%% info.res_kkt_final = relative KKT residual
+%% info.eta_res = relative residual based on infeasibilities and 
+%%                duality gap
+%% info.totletime = total running time;
 %% info.xnnz = the number of nonzero entries for x
-%% N-ALM:
-%% Copyright (c) 2022 by
-%% Can Wu, Ying Cui, Donghui Li, Defeng Sun
+%% Copyright (c) 2022 by Can Wu, Ying Cui, Donghui Li, Defeng Sun
+%% For more details, please see the Section 3 of the paper: 
+%% Convex and Nonconvex Risk-based Linear Regression at Scale.
 %%*************************************************************************
-
 function [obj,x,z,u,runhist,info] = NALM(Ainput,b,OPTIONS)
 %%
 %% Input parameters

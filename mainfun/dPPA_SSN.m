@@ -1,12 +1,13 @@
-%%**************************************************************************************************************
+%%*************************************************************************
 %% dPPA_SSN:
-%% A proximal point algorithm for solving the dual problem of the following subproblem of MM algorithm
+%% A proximal point algorithm for solving the dual problem of the 
+%% following subproblem of MM algorithm
 %%
-%% minimize    { ||A*x - b||_(k1) + lambda ||x||_1 - ||A*x_old - b||_(k2) - < a, A*x - A*x_old > 
-%% x in R^n                       + (rho/2)||x - x_old||^2 + (sigma/2)||A*x - A*x_old||^2             }
-%%
-%% where a is a subgradient of f_2(x) := ||Ax-b||_(k2) at x = x_old, rho > 0, sigma > 0,
-%% x_old is a given vector.
+%% minimize    { ||A*x - b||_(k1) + lambda ||x||_1 - ||A*x_old - b||_(k2)  
+%% x in R^n       - < a, A*x - A*x_old > + (rho/2)||x - x_old||^2 
+%%                + (sigma/2)||A*x - A*x_old||^2 }
+%% where a is a subgradient of f_2(x) := ||Ax-b||_(k2) at x = x_old,
+%% rho > 0, sigma > 0, x_old is a given vector.
 %%
 %% [x,u,z,info,runhist] = dPPA_SSN(A,b,OPTIONS)
 %% Input: A, b
@@ -15,15 +16,16 @@
 %% OPTIONS.sigma = parameter sigma in the above subproblem;
 %% OPTIONS.eta0 = the initial value of the parameter eta in PPA;
 %% OPTIONS.etascale = coefficient in [1,+inf) for updating eta;
-%% OPTIONS.obj_gap_mm = previous relative residual for two adjacent objectives in MM;
+%% OPTIONS.obj_gap_mm = previous relative residual for two adjacent
+%%                      objectives in MM;
 %% OPTIONS.x0 = the initial point of primal variable x;
 %% OPTIONS.u0 = the initial point of dual variable u;
 %% OPTIONS.printPPA = 1, print in PPA; 0, does not print in PPA;
 %% OPTIONS.printSSN = 1, print in SSN; 0, does not print in SSN;
 %% Output:
-%% x = the primal variable;
-%% u = the dual variable;
-%% z = the primal slack variable;
+%% x = the output primal solution x;
+%% u = the output dual solution u;
+%% z = the output primal solution z;
 %% info.err_ppa = the residual of PPA;
 %% info.tol_ppa = (sigma/2)||A*(x - x_old)||^2;
 %% info.primfeas = the primal infeasibility for the above subproblem;
@@ -35,14 +37,14 @@
 %% info.iterSSN = the total number of iterations for SSN;
 %% info.cntATmap = the total number of calls to ATmap;
 %% info.cntAmap = the total number of calls to Amap;
-%% info.time = total time for dPPA_SSN;
+%% info.time = total running time for dPPA_SSN;
 %% info.ttime_cpu = total CPU time for dPPA_SSN;
 %% runhist = a structure containing the history of the run;
 %% dPPA_SSN:
-%% Copyright (c) 2022 by
-%% Can Wu, Ying Cui, Donghui Li, Defeng Sun
-%%**************************************************************************************************************
-
+%% Copyright (c) 2022 by Can Wu, Ying Cui, Donghui Li, Defeng Sun
+%% For more details, please see the Section 5 in the paper: 
+%% Convex and Nonconvex Risk-based Linear Regression at Scale.
+%%*************************************************************************
 function [x,u,z,info,runhist] = dPPA_SSN(A,b,OPTIONS)
 
 %% Input parameters
