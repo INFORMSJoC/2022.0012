@@ -11,7 +11,22 @@ The snapshot corresponds to [this release](https://github.com/Wu-Can/k-normCode)
 
 ## Cite
 
-The final version of this repository, with updated bibliographical information, is available at [GitHub](https://github.com/INFORMSJoC/2022.0012).
+To cite this material, please cite this repository, using the following DOI.
+
+[![DOI](https://zenodo.org/badge/575465443.svg)](https://zenodo.org/badge/latestdoi/575465443)
+
+Below is the BibTex for citing this version of the code.
+
+```
+@article{Risk202Xregression,
+  author =        {Can Wu, Ying Cui, Donghui Li and Defeng Sun},
+  publisher =     {INFORMS Journal on Computing},
+  title =         {Convex and Nonconvex Risk-based Linear Regression at Scale},
+  year =          {2022},
+  doi =           {DOI: 10.5281/zenodo.7483279},
+  note =          {https://github.com/INFORMSJoC/JoCTemplate},
+}  
+```
 
 ## Description
 
