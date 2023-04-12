@@ -1,6 +1,6 @@
 [![INFORMS Journal on Computing Logo](https://INFORMSJoC.github.io/logos/INFORMS_Journal_on_Computing_Header.jpg)](https://pubsonline.informs.org/journal/ijoc)
 
-# Convex and Nonconvex Risk-based Linear Regression at Scale
+# [Convex and Nonconvex Risk-based Linear Regression at Scale](https://doi.org/10.1287/ijoc.2023.1282)
 
 This archive is distributed in association with the [INFORMS Journal on
 Computing](https://pubsonline.informs.org/journal/ijoc) under the [General Public License v2.0](LICENSE).
