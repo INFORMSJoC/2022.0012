@@ -11,9 +11,7 @@ The snapshot corresponds to [this release](https://github.com/Wu-Can/k-normCode)
 
 ## Cite
 
-To cite this material, please cite this repository, using the following DOI.
-
-[![DOI](https://zenodo.org/badge/575465443.svg)](https://zenodo.org/badge/latestdoi/575465443)
+To cite this material, please cite this repository, using the following DOI: [10.1287/ijoc.2023.1282.cd](https://doi.org/10.1287/ijoc.2023.1282.cd)
 
 Below is the BibTex for citing this version of the code.
 
@@ -23,8 +21,8 @@ Below is the BibTex for citing this version of the code.
   publisher =     {INFORMS Journal on Computing},
   title =         {Convex and Nonconvex Risk-based Linear Regression at Scale},
   year =          {2022},
-  doi =           {DOI: 10.5281/zenodo.7483279},
-  note =          {https://github.com/INFORMSJoC/JoCTemplate},
+  doi =           {10.1287/ijoc.2023.1282.cd},
+  note =          {https://github.com/INFORMSJoC/2022.0012},
 }  
 ```
 
